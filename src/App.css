@@ -28,9 +28,34 @@
   color: #61dafb;
 }
 
-.articleContents__body {
+#articleContents__body {
   font-size: 20px; 
 }
+
+#articleVotes {
+  background-color: white;
+  border: none; 
+  font-size: 25px;
+  cursor: pointer; 
+  color: green;
+}
+
+#articleVotes:hover {
+  cursor: pointer; 
+}
+
+#articleVotes:active {
+  font-size: 20px; 
+}
+
+.ArticleVotes__voteErr--hidden {
+  visibility: hidden;
+}
+
+.ArticleVotes__voteErr--visible {
+  color: red;
+}
+
 
 .article-preview {
   background-color: beige;

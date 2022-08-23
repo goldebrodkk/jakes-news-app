@@ -1,6 +1,6 @@
 const ArticlePreview = ({ article }) => {
     return (
-        <div>
+        <div className='article-preview'>
         <h2>{article.title}</h2>
         <h3>{article.author}</h3>
         <h4>{article.topic}</h4>

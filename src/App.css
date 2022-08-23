@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.articleContents__body {
+  font-size: 20px; 
+}
+
 .article-preview {
   background-color: beige;
   margin: 5px;

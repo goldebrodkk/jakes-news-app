@@ -22,7 +22,17 @@ const getTopics = () => {
     })
 }
 
+const getArticlebyArticleID = (article_id) => {
+    return axios.get(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`)
+    .then((res) => {
+        return res; 
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 export {
     getArticles, 
-    getTopics
+    getTopics,
+    getArticlebyArticleID
 }

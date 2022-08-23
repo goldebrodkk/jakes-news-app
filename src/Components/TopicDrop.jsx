@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getTopics } from "../api";
 import { Link } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
+import { DropdownButton } from "react-bootstrap";
 
 const TopicDrop = () => {
     const [topics, setTopics] = useState([]); 
@@ -15,16 +17,17 @@ const TopicDrop = () => {
     const formatTopics = topics.map((topic) => {
         return (
             <Link to={`/articles/${topic.slug}`}>
-            <p>{topic.slug}</p>
+            <p className="dropdown-item">{topic.slug}</p>
             </Link>
         )
     })
 
+
     return (
-        <>
-        <Link to='/articles'><p>All</p></Link>
-        {formatTopics}
-        </>
+            <>
+            <Link to='/articles'><p className="dropdown-item">All</p></Link>
+            {formatTopics}
+            </>
     )
 }
 

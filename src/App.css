@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.article-preview {
+  background-color: beige;
+  margin: 5px;
+  border-radius: 25px;
+  padding: 2px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -18,7 +18,7 @@ const ArticleList = () => {
 
     const formatArticles = articles.map((article) => {
         return (
-            <ArticlePreview key={article.title} article={article}/>
+            <ArticlePreview key={article.article_id} article={article}/>
         )
     })
 

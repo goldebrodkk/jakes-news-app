@@ -31,21 +31,13 @@ const getArticlebyArticleID = (article_id) => {
     })
 }
 
-const incrementVotes = (article_id) => {
+const incrementVotes = (article_id, votes) => {
     return axios.patch(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`,
-    {inc_votes: 1})
+    {inc_votes: `${votes}`})
     .then((res) => {
         return res;
     })
     
-}
-
-const decrementVotes = (article_id) => {
-    return axios.patch(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`,
-    {inc_votes: -1})
-    .then((res) => {
-        return res;
-    })
 }
 
 export {
@@ -53,5 +45,4 @@ export {
     getTopics,
     getArticlebyArticleID,
     incrementVotes, 
-    decrementVotes
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { decrementVotes, incrementVotes } from "../api";
+import { incrementVotes } from "../api";
 
 const ArticleVotes = ({articleVotes, articleID}) => {
     const [votes, setVotes] = useState(articleVotes); 
@@ -14,7 +14,7 @@ const ArticleVotes = ({articleVotes, articleID}) => {
     const handleLike = () => {
         if (!isLikeActive) {
         setVotes((currVotes) => currVotes + 1)
-        incrementVotes(articleID)
+        incrementVotes(articleID, 1)
         .then(() => {
             setTagClass('articleVotes__voteErr--hidden'); 
             setIsLikeActive(true); 
@@ -29,7 +29,7 @@ const ArticleVotes = ({articleVotes, articleID}) => {
         })
       } else {
         setVotes((currVotes) => currVotes - 1)
-        decrementVotes(articleID)
+        incrementVotes(articleID, -1)
         .then(() => {
             setTagClass('articleVotes__voteErr--hidden'); 
             setIsLikeActive(false); 
@@ -48,7 +48,7 @@ const ArticleVotes = ({articleVotes, articleID}) => {
     const handleDislike = () => {
         if (!isDislikeActive) {
         setVotes((currVotes) => currVotes - 1);
-        decrementVotes(articleID).then(() => {
+        incrementVotes(articleID, 1).then(() => {
             setTagClass('articleVotes__voteErr--hidden'); 
             setIsDislikeActive(true); 
             setDislikeClass('articleVotes__button--activated');
@@ -62,7 +62,7 @@ const ArticleVotes = ({articleVotes, articleID}) => {
         })
       } else {
         setVotes((currVotes) => currVotes + 1);
-        incrementVotes(articleID).then(() => {
+        incrementVotes(articleID, -1).then(() => {
             setTagClass('articleVotes__voteErr--hidden'); 
             setIsDislikeActive(false);  
             setDislikeClass('articleVotes__button');

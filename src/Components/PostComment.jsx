@@ -31,9 +31,13 @@ const PostComment = ({ article_id, setNewComment }) => {
         <h2 classname="postComment__message">{message}</h2>
     <form onSubmit={handleSubmit}>
         <label>
-            <input type='text' className='postComment__textField' value={newItem} onChange={(event) => setNewItem(event.target.value)}/>
+            <div className="postComment__textcontainer">
+            <textarea type='text' className='postComment__textField' placeholder='Post a comment!' value={newItem} onChange={(event) => setNewItem(event.target.value)}/>
+            </div>
         </label>
+        <div className="postComment__submitcontainer">
         <button className="postComment__submitButton" type='submit' disabled={submitActive}>Post Comment</button>
+        </div>
     </form>
     </div>
     )

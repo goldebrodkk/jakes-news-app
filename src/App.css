@@ -41,15 +41,21 @@
   color: red;
 }
 
-.postComment__container {
-  display: grid; 
-  justify-content: center;
-}
-
 .postComment__textField {
   width: 350px; 
   height: 200px; 
   margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.postComment__textcontainer {
+  display: flex; 
+  justify-content: center;
+}
+
+.postComment__submitcontainer {
+  display: flex;
+  justify-content: center;
 }
 
 .postComment__submitButton {
@@ -128,6 +134,13 @@ article {
   font-family: gotham light;
 }
 
+.article-image {
+  max-width: 400px;
+  max-height: 500px;
+  border-radius: 15px;
+  margin-bottom:35px;
+}
+
 #article-title {
  grid-area: title;
  text-align: left;
@@ -138,3 +151,16 @@ article {
   text-decoration: none;
 }
 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

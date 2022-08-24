@@ -49,10 +49,20 @@ const getCommentsbyArticleID = (article_id) => {
     })
 }
 
+const postComment = (article_id, username, body) => {
+    return axios.post(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}/comments`, {
+        username: `${username}`,
+        body: `${body}`
+    }).then((res) => {
+        return res; 
+    })
+}
+
 export {
     getArticles, 
     getTopics,
     getArticlebyArticleID,
     incrementVotes, 
-    getCommentsbyArticleID
+    getCommentsbyArticleID, 
+    postComment
 }

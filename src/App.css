@@ -64,6 +64,30 @@
   color: red;
 }
 
+.postComment__container {
+  display: grid; 
+  justify-content: center;
+}
+
+.postComment__textField {
+  width: 350px; 
+  height: 200px; 
+  margin-bottom: 20px;
+}
+
+.postComment__submitButton {
+  width: 200px; 
+  height: 50px; 
+  background-color: rgb(100, 180, 255);
+  border: none;
+  border-radius: 25px;
+  box-shadow: 2px 2px 1px 1px;
+}
+
+.postComment__submitButton:hover {
+  opacity: 0.8
+}
+
 
 .article-preview {
   background-color: beige;

@@ -9,7 +9,7 @@ const ArticleContents = ({ singleArticle }) => {
             <div className="title-container">
                 <h1 id='article-title'>{singleArticle.title}</h1>
                 <div className="article-details">
-                    <p id='article-date'>{singleArticle.created_at.slice(0, 10)}</p>
+                    <p id='article-date'>{singleArticle.created_at.slice(0, 10)} |</p>
                     <Link to={`/articles/${singleArticle.topic}`}><h4 id='article-topic'>{singleArticle.topic}</h4></Link>
                 </div>
             </div>

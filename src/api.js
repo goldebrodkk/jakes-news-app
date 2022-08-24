@@ -40,9 +40,19 @@ const incrementVotes = (article_id, votes) => {
     
 }
 
+const getCommentsbyArticleID = (article_id) => {
+    return axios.get(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}/comments`)
+    .then((res) => {
+        return res; 
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 export {
     getArticles, 
     getTopics,
     getArticlebyArticleID,
     incrementVotes, 
+    getCommentsbyArticleID
 }

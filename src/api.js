@@ -31,8 +31,18 @@ const getArticlebyArticleID = (article_id) => {
     })
 }
 
+const incrementVotes = (article_id, votes) => {
+    return axios.patch(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`,
+    {inc_votes: `${votes}`})
+    .then((res) => {
+        return res;
+    })
+    
+}
+
 export {
     getArticles, 
     getTopics,
-    getArticlebyArticleID
+    getArticlebyArticleID,
+    incrementVotes, 
 }

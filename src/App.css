@@ -28,9 +28,42 @@
   color: #61dafb;
 }
 
-.articleContents__body {
+#articleContents__body {
   font-size: 20px; 
 }
+
+.articleVotes__button {
+  background-color: white;
+  border: none; 
+  font-size: 25px;
+  cursor: pointer; 
+  margin: 7px;
+}
+
+.articleVotes__button--activated {
+  background-color: white;
+  border: none; 
+  font-size: 35px;
+  cursor: pointer; 
+  margin: 7px;
+}
+
+.articleVotes__button:hover {
+  cursor: pointer; 
+}
+
+.articleVotes__button:active {
+  font-size: 20px; 
+}
+
+.articleVotes__voteErr--hidden {
+  visibility: hidden;
+}
+
+.articleVotes__voteErr--visible {
+  color: red;
+}
+
 
 .article-preview {
   background-color: beige;

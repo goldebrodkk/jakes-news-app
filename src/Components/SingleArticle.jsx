@@ -16,6 +16,7 @@ const SingleArticle = () => {
         })
     }, [article_id])
 
+
     if (isLoading) return <p>Loading!</p>
 
     return (

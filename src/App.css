@@ -32,27 +32,35 @@
   font-size: 20px; 
 }
 
-#articleVotes {
+.articleVotes__button {
   background-color: white;
   border: none; 
   font-size: 25px;
   cursor: pointer; 
-  color: green;
+  margin: 7px;
 }
 
-#articleVotes:hover {
+.articleVotes__button--activated {
+  background-color: white;
+  border: none; 
+  font-size: 35px;
+  cursor: pointer; 
+  margin: 7px;
+}
+
+.articleVotes__button:hover {
   cursor: pointer; 
 }
 
-#articleVotes:active {
+.articleVotes__button:active {
   font-size: 20px; 
 }
 
-.ArticleVotes__voteErr--hidden {
+.articleVotes__voteErr--hidden {
   visibility: hidden;
 }
 
-.ArticleVotes__voteErr--visible {
+.articleVotes__voteErr--visible {
   color: red;
 }
 

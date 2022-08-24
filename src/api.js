@@ -42,7 +42,7 @@ const incrementVotes = (article_id) => {
 
 const decrementVotes = (article_id) => {
     return axios.patch(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`,
-    {inc_votes: 1})
+    {inc_votes: -1})
     .then((res) => {
         return res;
     })

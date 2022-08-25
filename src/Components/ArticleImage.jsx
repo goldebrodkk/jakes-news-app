@@ -10,7 +10,7 @@ const ArticleImage = ({ topic }) => {
     useEffect(() => {
         getArticleImage(topic)
         .then(({ data }) => {
-            setImage(data.results[randomIndex].urls.raw); 
+            setImage(data.results[randomIndex]); 
             setIsLoading(false); 
         })
     }, [])
@@ -18,7 +18,7 @@ const ArticleImage = ({ topic }) => {
     if (isLoading) return <p>Loading!</p>
 
     return (
-        <img src={image} alt='' className="article-image"/>
+        <img src={image.urls.raw} alt={image.alt_description} className="article-image"/>
     )
 
     }

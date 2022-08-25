@@ -132,8 +132,9 @@ article {
   gap: 15px; 
   margin-left: 15px;
   font-family: gotham light;
-  height: 30px
+  height: 30px;
 }
+
 
 .article-image {
   max-width: 400px;

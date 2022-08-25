@@ -16,7 +16,7 @@ const PostComment = ({ article_id, setNewComment, setComments }) => {
                 created_at: Date.now().toString(),
                 username: user.username,
                 body: newItem, 
-                votes: 0
+                votes: 0,
             }
             return [commBody, ...prevComms];
         })

@@ -59,7 +59,13 @@ const postComment = (article_id, username, body) => {
 }
 
 const getArticleImage = (topic) => {
-    return axios.get(`https://api.unsplash.com/search/photos?query=${topic}&client_id=DjTIHUxEvutYriF2d_T7SrIVNoMNdEruLAWdmZAtzWg`)
+    return axios.get(`https://api.unsplash.com/search/photos`, 
+    {
+        params: {
+            query: `${topic}`, 
+            client_id: 'DjTIHUxEvutYriF2d_T7SrIVNoMNdEruLAWdmZAtzWg'
+        }
+    })
     .then((res) => {
         return res
     }).catch((err) => {

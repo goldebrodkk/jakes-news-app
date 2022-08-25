@@ -15,8 +15,6 @@ const ArticleImage = ({ topic }) => {
         })
     }, [])
 
-console.log(image);
-
     if (isLoading) return <p>Loading!</p>
 
     return (

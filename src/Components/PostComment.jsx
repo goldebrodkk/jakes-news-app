@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { postComment } from "../api";
 import { UserContext } from "./UserContext ";
 
-const PostComment = ({ article_id, setNewComment }) => {
+const PostComment = ({ article_id, setNewComment, setComments }) => {
     const [newItem, setNewItem] = useState('')
     const [submitActive, setSubmitActive] = useState(false); 
     const [message, setMessage] = useState(''); 
@@ -11,6 +11,15 @@ const PostComment = ({ article_id, setNewComment }) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         setSubmitActive(true); 
+        setComments((prevComms) => {
+            const commBody = {
+                created_at: Date.now().toString(),
+                username: user.username,
+                body: newItem, 
+                votes: 0
+            }
+            return [commBody, ...prevComms];
+        })
         postComment(article_id, user.username, newItem)
         .then(({ data }) => {
             setNewComment(data);
@@ -20,6 +29,7 @@ const PostComment = ({ article_id, setNewComment }) => {
         }).catch((err) => {
             setSubmitActive(false); 
             setMessage('Something went wrong, please try again'); 
+            setNewComment({})
         })
         
     }
@@ -28,7 +38,7 @@ const PostComment = ({ article_id, setNewComment }) => {
 
     return (
        <div className="postComment__container">
-        <h2 classname="postComment__message">{message}</h2>
+        <h2 className="postComment__message">{message}</h2>
     <form onSubmit={handleSubmit}>
         <label>
             <div className="postComment__textcontainer">

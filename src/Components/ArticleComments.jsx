@@ -11,6 +11,7 @@ const ArticleComments = ({ article_id }) => {
     useEffect(() => {
         getCommentsbyArticleID(article_id)
         .then(({ data }) => {
+            data.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
             setComments(data); 
             setIsLoading(false); 
         })
@@ -25,7 +26,7 @@ const commentFormat = comments.map((comment) => {
     return (
         <>
         <div>
-        <PostComment article_id={article_id} newComment={newComment} setNewComment={setNewComment}/>
+        <PostComment article_id={article_id} setNewComment={setNewComment} setComments={setComments}/>
         </div>
         <div>
             <br></br>

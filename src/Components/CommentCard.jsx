@@ -1,5 +1,4 @@
 const CommentCard = ({ comment }) => {
-    console.log(comment);
     return (
         <>
         <h3>{comment.author}</h3>

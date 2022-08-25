@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticlebyArticleID } from "../api";
 import ArticleContents from "./ArticleContents";
-import ArticleComments from "./ViewComments";
+import ArticleComments from "./ArticleComments";
 
 const SingleArticle = () => {
     const [singleArticle, setSingleArticle] = useState({}); 

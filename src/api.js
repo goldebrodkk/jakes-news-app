@@ -49,10 +49,36 @@ const getCommentsbyArticleID = (article_id) => {
     })
 }
 
+const postComment = (article_id, username, body) => {
+    return axios.post(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}/comments`, {
+        username: `${username}`,
+        body: `${body}`
+    }).then((res) => {
+        return res; 
+    })
+}
+
+const getArticleImage = (topic) => {
+    return axios.get(`https://api.unsplash.com/search/photos`, 
+    {
+        params: {
+            query: `${topic}`, 
+            client_id: 'DjTIHUxEvutYriF2d_T7SrIVNoMNdEruLAWdmZAtzWg'
+        }
+    })
+    .then((res) => {
+        return res
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 export {
     getArticles, 
     getTopics,
     getArticlebyArticleID,
     incrementVotes, 
-    getCommentsbyArticleID
+    getCommentsbyArticleID, 
+    postComment,
+    getArticleImage
 }

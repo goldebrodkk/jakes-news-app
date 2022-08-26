@@ -20,7 +20,7 @@ const SingleArticle = () => {
         })
     }, [article_id])
 
-    if (err) return <h1>404: article not found!</h1>; 
+    if (err) return <h1>404: Article not found!</h1>; 
 
     if (isLoading) return <p>Loading!</p>
 

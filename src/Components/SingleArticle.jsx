@@ -7,6 +7,7 @@ import ArticleComments from "./ArticleComments";
 const SingleArticle = () => {
     const [singleArticle, setSingleArticle] = useState({}); 
     const [isLoading, setIsLoading] = useState(true); 
+    const [err, setErr] = useState(null); 
     const { article_id } = useParams(); 
 
     useEffect(() => {
@@ -14,9 +15,12 @@ const SingleArticle = () => {
         .then(({ data }) => {
             setSingleArticle(data); 
             setIsLoading(false);
+        }).catch((err) => {
+            setErr(err); 
         })
     }, [article_id])
 
+    if (err) return <h1>404: article not found!</h1>; 
 
     if (isLoading) return <p>Loading!</p>
 

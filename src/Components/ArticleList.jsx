@@ -12,9 +12,8 @@ const ArticleList = () => {
         sortOn: 'created_at', 
         orderBy: 'DESC'
     }); 
+    const [err, setErr] = useState(null); 
     const { topic } = useParams()
-
- console.log(searchParams);
 
     const sortOn = searchParams.get('sortOn'); 
     const orderBy = searchParams.get('orderBy'); 
@@ -24,8 +23,12 @@ const ArticleList = () => {
         .then(({ data }) => {
             setArticles(data)
             setIsLoading(false); 
+        }).catch((err) => {
+            setErr(err); 
         })
     }, [topic, searchParams])
+
+    if (err) return <h1>404: topic Not found </h1>
 
    if (isLoading) return  <p>Loading!</p>
 

@@ -46,7 +46,7 @@ const PostComment = ({ article_id, setNewComment, setComments }) => {
             </div>
         </label>
         <div className="postComment__submitcontainer">
-        <button className="postComment__submitButton" type='submit' disabled={submitActive}>Post Comment</button>
+        <button className="postComment__submitButton" type='submit' disabled={newItem.length === 0 ? true: submitActive}>Post Comment</button>
         </div>
     </form>
     </div>

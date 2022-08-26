@@ -18,7 +18,7 @@ const ArticleComments = ({ article_id }) => {
     }, [article_id, newComment])
 
 const commentFormat = comments.map((comment) => {
-        return <CommentCard key={comment.created_at}comment={comment}/>
+        return <CommentCard key={comment.created_at}comment={comment}setComments={setComments} setNewComment={setNewComment}/>
     })
 
     if (isLoading) return <p>Loading!</p>

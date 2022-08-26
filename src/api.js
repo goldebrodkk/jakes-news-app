@@ -10,8 +10,6 @@ const getArticles = (topic = '', sortOn, orderBy) => {
    })
     .then((res) => {
         return res
-    }).catch((err) => {
-        console.log(err);
     })
 }
 
@@ -28,8 +26,6 @@ const getArticlebyArticleID = (article_id) => {
     return axios.get(`https://jakes-news-api.herokuapp.com/api/articles/${article_id}`)
     .then((res) => {
         return res; 
-    }).catch((err) => {
-        console.log(err);
     })
 }
 
@@ -75,6 +71,13 @@ const getArticleImage = (topic) => {
     })
 }
 
+const deleteComment = (comment_id) => {
+    return axios.delete(`https://jakes-news-api.herokuapp.com/api/comments/${comment_id}`)
+    .then((res) => {
+        return res; 
+    })
+}
+
 export {
     getArticles, 
     getTopics,
@@ -82,5 +85,6 @@ export {
     incrementVotes, 
     getCommentsbyArticleID, 
     postComment,
-    getArticleImage
+    getArticleImage,
+    deleteComment
 }

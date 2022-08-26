@@ -75,6 +75,13 @@ const getArticleImage = (topic) => {
     })
 }
 
+const deleteComment = (comment_id) => {
+    return axios.delete(`https://jakes-news-api.herokuapp.com/api/comments/${comment_id}`)
+    .then((res) => {
+        return res; 
+    })
+}
+
 export {
     getArticles, 
     getTopics,
@@ -82,5 +89,6 @@ export {
     incrementVotes, 
     getCommentsbyArticleID, 
     postComment,
-    getArticleImage
+    getArticleImage,
+    deleteComment
 }

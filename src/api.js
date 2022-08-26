@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const getArticles = (topic = '') => {
+const getArticles = (topic = '', sortOn, orderBy) => {
    return axios.get('https://jakes-news-api.herokuapp.com/api/articles', {
     params: {
-        term: `${topic}`
+        term: `${topic}`,
+        sortOn: `${sortOn}`, 
+        order: `${orderBy}`
     }
    })
     .then((res) => {

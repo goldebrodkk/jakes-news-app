@@ -10,11 +10,11 @@ const DeleteComment = ({ comment, setNewComment, setDeleteActive, setRemoveFail,
         deleteComment(comment.comment_id)
         .then(({data}) => {
             setRemoveFail(false); 
-            setNewComment(data); 
+            setNewComment({success: true}); 
             setDeleteActive(false); 
         }).catch((err) => {
             setRemoveFail(true);
-            setNewComment(err);
+            setNewComment({success: false});
             setDeleteActive(false);
         })
     }

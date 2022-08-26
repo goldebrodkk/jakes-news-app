@@ -14,8 +14,6 @@ const ArticleList = () => {
     }); 
     const { topic } = useParams()
 
- console.log(searchParams);
-
     const sortOn = searchParams.get('sortOn'); 
     const orderBy = searchParams.get('orderBy'); 
 

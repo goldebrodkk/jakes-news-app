@@ -28,7 +28,7 @@ const ArticleList = () => {
         })
     }, [topic, searchParams])
 
-    if (err) return <h1>404: topic Not found</h1>
+    if (err) return <h1>{err.message}</h1>
 
    if (isLoading) return  <p>Loading!</p>
 

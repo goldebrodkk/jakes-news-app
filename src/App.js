@@ -26,6 +26,7 @@ function App() {
         <Route path='/articles' element={<ArticleList />}/>
         <Route path='/articles/:topic' element={<ArticleList />}/>
         <Route path='/article/:article_id' element={<SingleArticle />}/>
+        <Route path='*' element={<h1>404: Path not found</h1>}/>
       </Routes>
     </div>
     </UserContext.Provider>

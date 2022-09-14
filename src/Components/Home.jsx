@@ -1,6 +1,11 @@
+import PopularArticles from "./PopularArticles";
+
 const Home = () => {
     return (
-        <h1>Welcome!</h1>
+        <>
+        <h1>Jake's News!</h1>
+        <PopularArticles />
+        </>
     )
 }
 

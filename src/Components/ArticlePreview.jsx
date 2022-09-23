@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ArticlePreview = ({ article }) => {
     return (
-        <div className='article-preview'>
+        <div className='article-preview article-preview-body'>
         <Link to={`/article/${article.article_id}`}><h2>{article.title}</h2></Link>
         <h3>{article.author}</h3>
         <h4>{article.topic}</h4>

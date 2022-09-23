@@ -14,22 +14,28 @@ const CommentCard = ({ comment, setNewComment }) => {
         )
     } if (user.username === comment.author) {
     return (
-        <>
-        <h3>{comment.author}</h3>
-        <p>{comment.created_at.slice(11,16)} {comment.created_at.slice(0, 10)}</p>
-        <p>{comment.body}</p>
-        <p>&#128077; {comment.votes}</p>
+        <div className="comment-container">
+        <div className="comment-header">
+        <h3 className="comment-author">{comment.author}</h3>
+        <p className="comment-created">|  {comment.created_at.slice(11,16)}  {comment.created_at.slice(0, 10)}</p>
+        </div>
+        <p className="comment-body">{comment.body}</p>
+        <div className="vote-delete-container">
+        <p className="comment-votes">&#128077; {comment.votes}</p>
         <DeleteComment comment={comment} setNewComment={setNewComment} setDeleteActive={setDeleteActive} setRemoveFail={setRemoveFail} removeFail={removeFail}/>
-        </>
+        </div>
+        </div>
     )
     }
     return (
-        <>
-        <h3>{comment.author}</h3>
-        <p>{comment.created_at.slice(11,16)} {comment.created_at.slice(0, 10)}</p>
-        <p>{comment.body}</p>
-        <p>&#128077; {comment.votes}</p>
-        </>
+        <div className="comment-container">
+        <div className="comment-header">
+        <h3 className="comment-author">{comment.author}</h3>
+        <p className="comment-created">|  {comment.created_at.slice(11,16)} {comment.created_at.slice(0, 10)}</p>
+        </div>
+        <p className="comment-body">{comment.body}</p>
+        <p className="comment-votes">&#128077; {comment.votes}</p>
+        </div>
     )
   }
 
